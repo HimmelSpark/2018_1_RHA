@@ -2,7 +2,7 @@ import Section from '../baseView.js';
 import bus from '../../../modules/bus.js';
 import Router from '../../../modules/router.js';
 import User from '../../../modules/userModel.js';
-
+let generateMenu = require('./menu.pug');
 
 /**
  * Class represents Section with Menu buttons
@@ -24,26 +24,26 @@ export default class MenuSection extends Section {
 		this.menu = document.createElement('div');
 		this.attrsActive = [
 			{
-				title: 'singleplayer',
-				href: '/singleplayer'
+				title: 'Training',
+				href: '/training'
 			},
 			{
-				title: 'multiplayer',
-				href: '#'
+				title: 'Multiplayer',
+				href: '/multiplayer'
 			},
 			{
-				title: 'profile',
+				title: 'Profile',
 				href: '/profile'
 			},
 			{
-				title: 'rating',
+				title: 'Rating',
 				href: '/rating'
 			},
 		];
 		this.attrPassive = [
 			{
-				title: 'singleplayer',
-				href: '/singleplayer'
+				title: 'Training',
+				href: '/training'
 			},
 			{
 				title: 'Sign In',
@@ -64,14 +64,16 @@ export default class MenuSection extends Section {
 				e.preventDefault();
 				bus.emit('logout', null);
 			});
-			this.logoutWrapper = document.createElement('div');
-			this.logoutWrapper.classList.add('button');
-			this.logoutWrapper.appendChild(this.logout);
-			this.menu.appendChild(this.logoutWrapper);
+			this.logoutWrapper = this.menu.getElementsByClassName('logout')[0];
+			this.lW = document.createElement('div');
+			this.lW.classList.add('button');
+			this.logoutWrapper.appendChild(this.lW);
+			this.lW.appendChild(this.logout);
 		}
 		else {
 			this.menu.innerHTML = generateMenu({'attrs': this.attrPassive});
 		}
+		this.menu.classList.add('menu-wrapp');
 		return this.menu;
 	}
 

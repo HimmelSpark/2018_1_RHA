@@ -9,7 +9,8 @@ const cacheList = [
 	'/rating',
 	'/login',
 	'/singleplayer',
-	'/default.jpg'
+	'/default.jpg',
+	'/map.png'
 ];
 
 this.addEventListener('install', (event) =>
@@ -25,9 +26,6 @@ this.addEventListener('install', (event) =>
 
 this.addEventListener('fetch', (event) =>
 {
-
-
-
 	event.respondWith(
 		caches.match(event.request)
 			.then(

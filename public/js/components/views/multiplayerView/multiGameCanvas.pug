@@ -1,0 +1,30 @@
+div.canvas-wrap
+    canvas(width=width height=height id=id).canvas
+div.log#log
+    div.user-data
+        div.game-avatar-wrapper
+            img.game-avatar(src="https://rha-backend.herokuapp.com/users/gava")#avatar
+        div.user-info
+            p.font.size#multi-username
+            p.font.size#multi-rating Rating
+    div.game-list
+    div.game-timer.font
+        div#timer1.inner-timer 00:30
+    div.hex-info#about-region
+        div.row-info.top-margin
+            div.col-info.font Hex type
+            div.field.font#type
+        div.row-info.row-margin
+            div.col-info.font Units
+            div.field.font#units
+    div.exit-button
+        div.exit-button-text EXIT
+    div.change
+        div.change-text END TURN
+div.mode-selection(hidden=hidden)
+    div.row-mode
+        span Select mode
+    div.row-mode
+        button 2 players
+    div.row-mode
+        button 3 players

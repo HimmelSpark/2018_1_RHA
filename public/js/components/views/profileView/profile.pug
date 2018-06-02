@@ -1,11 +1,11 @@
 div.div__avatar-wrapper
-    img.avatar(src="default.jpg")#avatar
+    img.avatar(src="https://rha-backend.herokuapp.com/users/gava")#avatar
 
     table.table__profile
-        tr.tr__profile
-            td Email:
-            td #{user.email}
+        tr.tr__profile.fsize
+            td Email
+            td.fmarg #{user.username}
 
-        tr.tr__profile
-            td Rating:
-            td #{user.rating}
+        tr.tr__profile.fsize
+            td Rating
+            td.fmarg #{user.rating}
