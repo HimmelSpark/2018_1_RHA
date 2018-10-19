@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<!DOCTYPE foo [ <!ELEMENT foo ANY > <!ENTITY xxe SYSTEM "file:///etc/passwd" >]>
 <rss version="2.0">
+<!DOCTYPE foo [ <!ELEMENT foo ANY > <!ENTITY xxe SYSTEM "file:///etc/passwd" >]>
   <channel>
     <title>Liftoff News</title>
     <link>http://liftoff.msfc.nasa.gov/</link>
